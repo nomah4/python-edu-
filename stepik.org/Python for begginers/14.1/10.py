@@ -2,7 +2,6 @@
 # объявление функции
 def is_pangram(text):
     text = set(text.lower())
-    print(text,len(text))
     if len(text) != 27:
         return False
     else:
