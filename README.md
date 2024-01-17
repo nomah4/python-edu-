@@ -3,6 +3,12 @@
 ### Заголовок 2
 #### Заголовок 3
 
+{% if page.show_sidebar %}
+  <div class="sidebar">
+    sidebar content
+  </div>
+{% endif %}
+
 Текст абзац 1
 
 Текст абзац 2
