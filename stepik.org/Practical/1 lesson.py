@@ -1,13 +1,17 @@
-from urllib.request import urlopen
-html = urlopen("https://stepik.org/media/attachments/lesson/209717/1.html").read().decode('utf-8')
-s = str(html)
-ans = []
-for c in s:
-    if c == '<':
-        state = 1
-    if c == '>':
-        state = 0
-    elif state == 0:
-        ans.append(c)
-s = ''.join(ans) 
-print (s.count("C++"))
+def high(x):
+    orig = x.split(" ")
+    sum_max = 0
+    sum_word = 0
+    word_max = ''
+    for word in orig:
+        for i in word:
+            sum_word += ord(i)-96
+        if sum_word > sum_max:
+            sum_max = sum_word
+            word_max = word
+            sum_word = 0
+        sum_word = 0
+    return word_max
+
+x = 'man i need a taxi up to ubud'
+print(high(x))
